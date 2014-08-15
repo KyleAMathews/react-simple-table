@@ -77,7 +77,10 @@ React.renderComponent({
       <SimpleTable columns={[
         {displayName: 'apple', path: 'apple.color'},
         {displayName: 'peach' path: 'peach.color'},
-        {displayName: 'cherry', function: function(data) {return data.cherry.color + " yeah!"}
+        {displayName: 'cherry', function: function(data) {
+           return data.cherry.color + " yeah!"
+          }
+        }
       ]}, data={fruitColors} />
     )
   }
