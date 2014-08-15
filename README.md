@@ -31,4 +31,61 @@ React.renderComponent({
     )
   }
 });
+
+// For deeper data structures, you can specify the "path" to your values
+using dot-notation strings.
+
+var fruitColors = [{
+  lime: {
+    color: 'Green'
+  },
+  lemon: {
+    color: 'Yellow'
+  },
+  orange: {
+    'Orange'
+  }
+}];
+
+React.renderComponent({
+  render: function() {
+    return (
+      <SimpleTable columns={[
+        {displayName: 'apple', path: 'apple.color'},
+        {displayName: 'peach' path: 'peach.color'},
+        {displayName: 'cherry', path: 'cherry.color'}
+      ]}, data={fruitColors} />
+    )
+  }
+});
+
+// You can also pass in a function and do whatever you'd like.
+
+var fruitColors = [{
+  lime: {
+    color: 'Green'
+  },
+  lemon: {
+    color: 'Yellow'
+  },
+  orange: {
+    'Orange'
+  }
+}];
+
+React.renderComponent({
+  render: function() {
+    return (
+      <SimpleTable columns={[
+        {displayName: 'apple', path: 'apple.color'},
+        {displayName: 'peach' path: 'peach.color'},
+        {displayName: 'cherry', function: function(data) { return
+data.cherry.color + " yeah!"}
+      ]}, data={fruitColors} />
+    )
+  }
+});
 ````
+
+## Demos
+http://kyleamathews.github.io/react-simple-table/
