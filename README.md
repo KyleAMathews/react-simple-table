@@ -34,7 +34,6 @@ React.renderComponent({
 
 // For deeper data structures, you can specify the "path" to your values
 // using dot-notation strings.
-
 var fruitColors = [{
   lime: {
     color: 'Green'
