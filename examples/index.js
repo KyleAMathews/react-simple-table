@@ -19,8 +19,14 @@ for (var i = 0; i < 9; i++) {
   fakeBizData.push(newObject);
 }
 
+var fakeContactData = [];
+for (var i = 0; i < 9; i++) {
+  fakeContactData.push(faker.Helpers.createCard());
+}
+console.log(fakeContactData);
+
 React.renderComponent(
-  React.DOM.div({style:{margin:'0 auto', width: '400px'}},
+  React.DOM.div({style:{margin:'0 auto', width: '500px'}},
     [
       React.DOM.h1(null, "React-Simple-Table"),
       React.DOM.a({href:"https://github.com/KyleAMathews/react-simple-table"}, "Browse code on Github"),
@@ -42,5 +48,16 @@ React.renderComponent(
       React.DOM.br(),
       React.DOM.br(),
       SimpleTable({columns: ['Company', 'Sales', 'Revenue', 'Profit'], data: fakeBizData}),
+
+      React.DOM.br(),
+      React.DOM.br(),
+      React.DOM.hr(),
+      React.DOM.br(),
+      React.DOM.br(),
+
+      React.DOM.code(null, "<SimpleTable columns={['Name', 'Email', {displayName: 'Company', path: 'company.name'}]}, data={fakeContactData} />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      SimpleTable({columns: ['Name', 'Email', {displayName: 'Company', path: 'company.name'}], data: fakeContactData}),
 
     ]), document.body);
