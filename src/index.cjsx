@@ -23,9 +23,12 @@ module.exports = React.createClass
         if typeof column is "string"
           datum = rowData[column.toLowerCase()]
           key = i + "-" + column
-        else
+        else if column.path?
           datum = deep(rowData, column.path)
           key = i + "-" + column.path
+        else if column.function?
+          datum = column.function(rowData)
+          key = i + "-" + datum
         row.push <td key={key}>{datum}</td>
       return <tr key={i}>{row}</tr>
 

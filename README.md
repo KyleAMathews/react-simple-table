@@ -58,6 +58,33 @@ React.renderComponent({
     )
   }
 });
+
+// You can also pass in a function and do whatever you'd like.
+
+var fruitColors = [{
+  lime: {
+    color: 'Green'
+  },
+  lemon: {
+    color: 'Yellow'
+  },
+  orange: {
+    'Orange'
+  }
+}];
+
+React.renderComponent({
+  render: function() {
+    return (
+      <SimpleTable columns={[
+        {displayName: 'apple', path: 'apple.color'},
+        {displayName: 'peach' path: 'peach.color'},
+        {displayName: 'cherry', function: function(data) { return
+data.cherry.color + " yeah!"}
+      ]}, data={fruitColors} />
+    )
+  }
+});
 ````
 
 ## Demos

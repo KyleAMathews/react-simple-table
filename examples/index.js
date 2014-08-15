@@ -54,10 +54,21 @@ React.renderComponent(
       React.DOM.hr(),
       React.DOM.br(),
       React.DOM.br(),
-
+      React.DOM.h2(null, "Access deep data using dot-notation"),
       React.DOM.code(null, "<SimpleTable columns={['Name', 'Email', {displayName: 'Company', path: 'company.name'}]}, data={fakeContactData} />"),
       React.DOM.br(),
       React.DOM.br(),
       SimpleTable({columns: ['Name', 'Email', {displayName: 'Company', path: 'company.name'}], data: fakeContactData}),
+
+      React.DOM.br(),
+      React.DOM.br(),
+      React.DOM.hr(),
+      React.DOM.br(),
+      React.DOM.br(),
+      React.DOM.h2(null, "Access or manipulate data using a function"),
+      React.DOM.code(null, "<SimpleTable columns={['Name', 'Email', {displayName: 'Company', function: function(data){return data.address.streetA + ', ' + data.address.city}}]}, data={fakeContactData} />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      SimpleTable({columns: ['Name', 'Email', {displayName: 'Address', function: function(data){return data.address.streetA + ", " + data.address.city}}], data: fakeContactData}),
 
     ]), document.body);
