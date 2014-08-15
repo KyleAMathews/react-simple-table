@@ -59,3 +59,6 @@ React.renderComponent({
   }
 });
 ````
+
+## Demos
+http://kyleamathews.github.io/react-simple-table/
