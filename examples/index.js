@@ -28,7 +28,7 @@ React.renderComponent(
       React.DOM.br(),
       React.DOM.br(),
 
-      React.DOM.code(null, "<SimpleTable columns={['apple', 'peach', 'cherry']}, data={fruitColors}"),
+      React.DOM.code(null, "<SimpleTable columns={['apple', 'peach', 'cherry']}, data={fruitColors} />"),
       React.DOM.br(),
       React.DOM.br(),
       SimpleTable({columns: ['Lime', 'Lemon', 'Orange'], data: fruitColors}),
@@ -38,7 +38,7 @@ React.renderComponent(
       React.DOM.br(),
       React.DOM.br(),
 
-      React.DOM.code(null, "<SimpleTable columns={['Company', 'Sales', 'Revenue', 'Profit']}, data={fakeBizData}"),
+      React.DOM.code(null, "<SimpleTable columns={['Company', 'Sales', 'Revenue', 'Profit']}, data={fakeBizData} />"),
       React.DOM.br(),
       React.DOM.br(),
       SimpleTable({columns: ['Company', 'Sales', 'Revenue', 'Profit'], data: fakeBizData}),
