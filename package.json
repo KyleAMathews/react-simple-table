@@ -1,7 +1,7 @@
 {
   "name": "react-simple-table",
   "description": "For when you just want a table",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": {
     "url": "https://github.com/KyleAMathews/react-simple-table/issues"

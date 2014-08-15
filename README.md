@@ -33,7 +33,7 @@ React.renderComponent({
 });
 
 // For deeper data structures, you can specify the "path" to your values
-using dot-notation strings.
+// using dot-notation strings.
 
 var fruitColors = [{
   lime: {
@@ -60,7 +60,6 @@ React.renderComponent({
 });
 
 // You can also pass in a function and do whatever you'd like.
-
 var fruitColors = [{
   lime: {
     color: 'Green'
@@ -79,8 +78,7 @@ React.renderComponent({
       <SimpleTable columns={[
         {displayName: 'apple', path: 'apple.color'},
         {displayName: 'peach' path: 'peach.color'},
-        {displayName: 'cherry', function: function(data) { return
-data.cherry.color + " yeah!"}
+        {displayName: 'cherry', function: function(data) {return data.cherry.color + " yeah!"}
       ]}, data={fruitColors} />
     )
   }
