@@ -28,7 +28,7 @@ module.exports = React.createClass
           key = i + "-" + column.path
         else if column.function?
           datum = column.function(rowData)
-          key = i + "-" + datum
+          key = i + "-" + column.displayName
         row.push <td key={key}>{datum}</td>
       return <tr key={i}>{row}</tr>
 
