@@ -19,9 +19,9 @@ var SimpleTable = require('react-simple-table');
 var React = require('react');
 
 var fruitColors = [{
-  lime: 'Green',
-  lemon: 'Yellow',
-  orange:'Orange'
+  apple: 'Green',
+  peach: 'Yellow',
+  cherry: 'Red'
 }];
 
 React.renderComponent({
@@ -34,15 +34,15 @@ React.renderComponent({
 
 // For deeper data structures, you can specify the "path" to your values
 // using dot-notation strings.
-var fruitColors = [{
-  lime: {
+var deeperFruitColors = [{
+  apple: {
     color: 'Green'
   },
-  lemon: {
+  peach: {
     color: 'Yellow'
   },
-  orange: {
-    'Orange'
+  cherry: {
+    'Red'
   }
 }];
 
@@ -53,24 +53,12 @@ React.renderComponent({
         {displayName: 'apple', path: 'apple.color'},
         {displayName: 'peach' path: 'peach.color'},
         {displayName: 'cherry', path: 'cherry.color'}
-      ]}, data={fruitColors} />
+      ]}, data={deeperFruitColors} />
     )
   }
 });
 
 // You can also pass in a function and do whatever you'd like.
-var fruitColors = [{
-  lime: {
-    color: 'Green'
-  },
-  lemon: {
-    color: 'Yellow'
-  },
-  orange: {
-    'Orange'
-  }
-}];
-
 React.renderComponent({
   render: function() {
     return (
@@ -87,7 +75,7 @@ React.renderComponent({
            return row.cherry.color + " yeah!"
           }
         }
-      ]}, data={fruitColors} />
+      ]}, data={deeperFruitColors} />
     )
   }
 });
