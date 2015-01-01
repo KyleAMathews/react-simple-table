@@ -76,7 +76,13 @@ React.renderComponent({
     return (
       <SimpleTable columns={[
         {displayName: 'apple', path: 'apple.color'},
-        {displayName: 'peach' path: 'peach.color'},
+        {displayName: 'peach', function: function(row) {
+           return (
+            <span style={{color: "peach"}}>
+              {row.peach.color}
+            </span>
+          )
+        }}
         {displayName: 'cherry', function: function(row) {
            return row.cherry.color + " yeah!"
           }
