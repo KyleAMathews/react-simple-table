@@ -21,7 +21,7 @@ module.exports = React.createClass
         # Columns can either be a simple string or be an object that defines
         # both a displayName and path for accessing the data.
         if typeof column is "string"
-          datum = rowData[column.toLowerCase()]
+          datum = deep(rowData, column.toLowerCase())
           key = i + "-" + column
         else if column.path?
           datum = deep(rowData, column.path)
