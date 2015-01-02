@@ -34,9 +34,9 @@ module.exports = React.createClass
 
     return (
       <table>
-        <thead>
+        <thead key="thead">
           <tr>{columns}</tr>
         </thead>
-        <tbody>{body}</tbody>
+        <tbody key="tbody">{body}</tbody>
       </table>
     )
