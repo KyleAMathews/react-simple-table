@@ -81,5 +81,5 @@ React.renderComponent({
 });
 ````
 
-## Demos
+## Demo
 http://kyleamathews.github.io/react-simple-table/
