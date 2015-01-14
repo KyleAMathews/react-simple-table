@@ -5,8 +5,8 @@ module.exports = React.createClass
   displayName: "SimpleTable"
 
   propTypes:
-    columns: React.PropTypes.array
-    data: React.PropTypes.array
+    columns: React.PropTypes.array.isRequired
+    data: React.PropTypes.array.isRequired
 
   render: ->
     columns = @props.columns.map (column) ->
