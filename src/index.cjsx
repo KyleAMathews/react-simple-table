@@ -17,7 +17,7 @@ module.exports = React.createClass
 
     body = @props.data.map (rowData, i) =>
       row = []
-      for column in @props.columns
+      for column, colIndex in @props.columns
         # Columns can either be a simple string or be an object that defines
         # both a displayName and path for accessing the data.
         if typeof column is "string"
@@ -28,7 +28,7 @@ module.exports = React.createClass
           key = i + "-" + column.path
         else if column.function?
           datum = column.function(rowData)
-          key = i + "-" + column.displayName
+          key = i + "-" + colIndex
         row.push <td key={key}>{datum}</td>
       return <tr key={i}>{row}</tr>
 
