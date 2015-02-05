@@ -34,7 +34,7 @@ React.renderComponent(
       React.DOM.br(),
       React.DOM.br(),
 
-      React.DOM.code(null, "<SimpleTable columns={['apple', 'peach', 'cherry']}, data={fruitColors} />"),
+      React.DOM.code(null, "<SimpleTable className='test-class' columns={['apple', 'peach', 'cherry']}, data={fruitColors} />"),
       React.DOM.br(),
       React.DOM.br(),
       SimpleTable({className: "test-class", columns: ['Lime', 'Lemon', 'Orange'], data: fruitColors}),
