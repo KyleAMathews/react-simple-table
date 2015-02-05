@@ -8,20 +8,16 @@ infinite scroll, ajax loading, etc. etc. etc.
 `npm install react-simple-table`
 
 ## Usage
-Instead of infering the column names from the data's keys, the component
-requires you to specify both the columns and body data
-because body data can sometimes be heterogenous and both include keys
-that we don't want to show up in the table or be missing desired keys. So better
-to be explicit.
+`react-simple-table` takes two props `data` and `columns`.
 
 ````javascript
 var SimpleTable = require('react-simple-table');
 var React = require('react');
 
 var fruitColors = [{
-  lime: 'Green',
-  lemon: 'Yellow',
-  orange:'Orange'
+  apple: 'Green',
+  peach: 'Yellow',
+  cherry: 'Red'
 }];
 
 React.renderComponent({
@@ -33,17 +29,17 @@ React.renderComponent({
 });
 
 // For deeper data structures, you can specify the "path" to your values
-using dot-notation strings.
+// using dot-notation strings.
 
-var fruitColors = [{
-  lime: {
+var deeperFruitColors = [{
+  apple: {
     color: 'Green'
   },
-  lemon: {
+  peach: {
     color: 'Yellow'
   },
-  orange: {
-    'Orange'
+  cherry: {
+    'Red'
   }
 }];
 
@@ -54,38 +50,37 @@ React.renderComponent({
         {displayName: 'apple', path: 'apple.color'},
         {displayName: 'peach' path: 'peach.color'},
         {displayName: 'cherry', path: 'cherry.color'}
-      ]}, data={fruitColors} />
+      ]}, data={deeperFruitColors} />
     )
   }
 });
 
 // You can also pass in a function and do whatever you'd like.
-
-var fruitColors = [{
-  lime: {
-    color: 'Green'
-  },
-  lemon: {
-    color: 'Yellow'
-  },
-  orange: {
-    'Orange'
-  }
-}];
-
 React.renderComponent({
   render: function() {
     return (
       <SimpleTable columns={[
         {displayName: 'apple', path: 'apple.color'},
-        {displayName: 'peach' path: 'peach.color'},
-        {displayName: 'cherry', function: function(data) { return
-data.cherry.color + " yeah!"}
-      ]}, data={fruitColors} />
+        {displayName: 'peach', function: function(row) {
+           return (
+            <span style={{color: "peach"}}>
+              {row.peach.color}
+            </span>
+          )
+        }}
+        {displayName: 'cherry', function: function(row) {
+           return row.cherry.color + " yeah!"
+          }
+        }
+      ]}, data={deeperFruitColors} />
     )
   }
 });
 ````
 
-## Demos
+## Styling
+Tables by default have a `react-simple-table` class added. You can pass
+in custom class names as a string using the `className` prop.
+
+## Demo
 http://kyleamathews.github.io/react-simple-table/
