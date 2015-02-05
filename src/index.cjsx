@@ -20,6 +20,11 @@ module.exports = React.createClass
       for column, colIndex in @props.columns
         # Columns can either be a simple string or be an object that defines
         # both a displayName and path for accessing the data.
+
+        # TODO check if more performant to try to tie key to its data
+        # e.g. use row.id instead of "i". Theory being that React could move
+        # more elements around instead of destroying and recreating.
+        # Test this with a 10000 row table when working on sorting.
         if typeof column is "string"
           datum = deep(rowData, column.toLowerCase())
           key = i + "-" + column
