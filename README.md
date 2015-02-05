@@ -78,5 +78,9 @@ React.renderComponent({
 });
 ````
 
+## Styling
+Tables by default have a `react-simple-table` class added. You can pass
+in custom class names as a string using the `className` prop.
+
 ## Demo
 http://kyleamathews.github.io/react-simple-table/

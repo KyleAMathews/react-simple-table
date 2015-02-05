@@ -7,6 +7,10 @@ module.exports = React.createClass
   propTypes:
     columns: React.PropTypes.array.isRequired
     data: React.PropTypes.array.isRequired
+    className: React.PropTypes.string
+
+  getDefaultProps: ->
+    className: 'react-simple-table'
 
   render: ->
     columns = @props.columns.map (column) ->
@@ -38,7 +42,7 @@ module.exports = React.createClass
       return <tr key={i}>{row}</tr>
 
     return (
-      <table>
+      <table className={@props.className}>
         <thead key="thead">
           <tr>{columns}</tr>
         </thead>
