@@ -11,7 +11,7 @@ var fruitColors = [{
 var fakeBizData = [];
 for (var i = 0; i < 9; i++) {
   newObject = {
-    company: faker.Company.companyName(),
+    company: faker.company.companyName(),
     sales: faker.random.number(100,600),
     revenue: faker.random.number(1000,100000),
     profit: faker.random.number(1000,10000)
@@ -21,7 +21,7 @@ for (var i = 0; i < 9; i++) {
 
 var fakeContactData = [];
 for (var i = 0; i < 9; i++) {
-  fakeContactData.push(faker.Helpers.createCard());
+  fakeContactData.push(faker.helpers.createCard());
 }
 console.log(fakeContactData);
 
@@ -37,7 +37,7 @@ React.renderComponent(
       React.DOM.code(null, "<SimpleTable columns={['apple', 'peach', 'cherry']}, data={fruitColors} />"),
       React.DOM.br(),
       React.DOM.br(),
-      SimpleTable({columns: ['Lime', 'Lemon', 'Orange'], data: fruitColors}),
+      SimpleTable({className: "test-class", columns: ['Lime', 'Lemon', 'Orange'], data: fruitColors}),
       React.DOM.br(),
       React.DOM.br(),
       React.DOM.hr(),
