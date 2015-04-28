@@ -42,7 +42,7 @@ module.exports = React.createClass
       return <tr key={i}>{row}</tr>
 
     return (
-      <table className={@props.className}>
+      <table {...@props} className={@props.className}>
         <thead key="thead">
           <tr>{columns}</tr>
         </thead>
