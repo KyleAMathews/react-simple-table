@@ -30,7 +30,7 @@ module.exports = React.createClass
         # more elements around instead of destroying and recreating.
         # Test this with a 10000 row table when working on sorting.
         if typeof column is "string"
-          datum = deep(rowData, column.toLowerCase())
+          datum = deep(rowData, column)
           key = i + "-" + column
         else if column.path?
           datum = deep(rowData, column.path)
