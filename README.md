@@ -47,9 +47,9 @@ React.renderComponent({
   render: function() {
     return (
       <SimpleTable columns={[
-        {displayName: 'apple', path: 'apple.color'},
-        {displayName: 'peach' path: 'peach.color'},
-        {displayName: 'cherry', path: 'cherry.color'}
+        {columnHeader: 'apple', path: 'apple.color'},
+        {columnHeader: 'peach' path: 'peach.color'},
+        {columnHeader: 'cherry', path: 'cherry.color'}
       ]}, data={deeperFruitColors} />
     )
   }
@@ -60,15 +60,15 @@ React.renderComponent({
   render: function() {
     return (
       <SimpleTable columns={[
-        {displayName: 'apple', path: 'apple.color'},
-        {displayName: 'peach', function: function(row) {
+        {columnHeader: 'apple', path: 'apple.color'},
+        {columnHeader: 'peach', format: function(row) {
            return (
             <span style={{color: "peach"}}>
               {row.peach.color}
             </span>
           )
         }}
-        {displayName: 'cherry', function: function(row) {
+        {columnHeader: 'cherry', format: function(row) {
            return row.cherry.color + " yeah!"
           }
         }
