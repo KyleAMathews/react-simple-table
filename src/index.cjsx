@@ -17,13 +17,13 @@ module.exports = React.createClass
       if typeof column is "string"
         <th key={column}>{column}</th>
       else
-        <th key={column.displayName}>{column.displayName}</th>
+        <th key={column.columnHeader}>{column.columnHeader}</th>
 
     body = @props.data.map (rowData, i) =>
       row = []
       for column, colIndex in @props.columns
         # Columns can either be a simple string or be an object that defines
-        # both a displayName and path for accessing the data.
+        # both a columnHeader and path for accessing the data.
 
         # TODO check if more performant to try to tie key to its data
         # e.g. use row.id instead of "i". Theory being that React could move
@@ -35,8 +35,8 @@ module.exports = React.createClass
         else if column.path?
           datum = deep(rowData, column.path)
           key = i + "-" + column.path
-        else if column.function?
-          datum = column.function(rowData)
+        else if column.format?
+          datum = column.format(rowData)
           key = i + "-" + colIndex
         row.push <td key={key}>{datum}</td>
       return <tr key={i}>{row}</tr>
