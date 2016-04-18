@@ -12,7 +12,7 @@
     "coffee-react": "^4.0.0",
     "coffee-script": "^1.9.0",
     "css-loader": "^0.21.0",
-    "faker": "^3.0.1",
+    "faker": "^3.1.0",
     "react": "^0.14.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.5.3"
