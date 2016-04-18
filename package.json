@@ -14,7 +14,7 @@
     "css-loader": "^0.21.0",
     "faker": "^3.0.1",
     "react": "^0.14.0",
-    "style-loader": "^0.13.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.5.3"
   },
   "homepage": "https://github.com/KyleAMathews/react-simple-table",
