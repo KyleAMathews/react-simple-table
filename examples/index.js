@@ -1,5 +1,6 @@
 var SimpleTable = require('../src/index');
 var React = require('react');
+var ReactDOM = require('react-dom');
 var faker = require('faker');
 
 var fruitColors = [{
@@ -25,7 +26,7 @@ for (var i = 0; i < 9; i++) {
 }
 console.log(fakeContactData);
 
-React.renderComponent(
+ReactDOM.render(
   React.DOM.div({style:{margin:'0 auto', width: '500px'}},
     [
       React.DOM.h1(null, "React-Simple-Table"),
@@ -37,7 +38,7 @@ React.renderComponent(
       React.DOM.code(null, "<SimpleTable className='test-class' columns={['apple', 'peach', 'cherry']}, data={fruitColors} />"),
       React.DOM.br(),
       React.DOM.br(),
-      SimpleTable({className: "test-class", columns: ['Lime', 'Lemon', 'Orange'], data: fruitColors}),
+      React.createElement(SimpleTable, {className: "test-class", columns: ['Lime', 'Lemon', 'Orange'], data: fruitColors}),
       React.DOM.br(),
       React.DOM.br(),
       React.DOM.hr(),
@@ -47,7 +48,7 @@ React.renderComponent(
       React.DOM.code(null, "<SimpleTable columns={['Company', 'Sales', 'Revenue', 'Profit']}, data={fakeBizData} />"),
       React.DOM.br(),
       React.DOM.br(),
-      SimpleTable({columns: ['Company', 'Sales', 'Revenue', 'Profit'], data: fakeBizData}),
+      React.createElement(SimpleTable, {columns: ['Company', 'Sales', 'Revenue', 'Profit'], data: fakeBizData}),
 
       React.DOM.br(),
       React.DOM.br(),
@@ -58,7 +59,7 @@ React.renderComponent(
       React.DOM.code(null, "<SimpleTable columns={['Name', 'Email', {displayName: 'Company', path: 'company.name'}]}, data={fakeContactData} />"),
       React.DOM.br(),
       React.DOM.br(),
-      SimpleTable({columns: ['Name', 'Email', {displayName: 'Company', path: 'company.name'}], data: fakeContactData}),
+      React.createElement(SimpleTable, {columns: ['Name', 'Email', {displayName: 'Company', path: 'company.name'}], data: fakeContactData}),
 
       React.DOM.br(),
       React.DOM.br(),
@@ -69,6 +70,6 @@ React.renderComponent(
       React.DOM.code(null, "<SimpleTable columns={['Name', 'Email', {displayName: 'Company', function: function(data){return data.address.streetA + ', ' + data.address.city}}]}, data={fakeContactData} />"),
       React.DOM.br(),
       React.DOM.br(),
-      SimpleTable({columns: ['Name', 'Email', {displayName: 'Address', function: function(data){return data.address.streetA + ", " + data.address.city}}], data: fakeContactData}),
+      React.createElement(SimpleTable, {columns: ['Name', 'Email', {displayName: 'Address', function: function(data){return data.address.streetA + ", " + data.address.city}}], data: fakeContactData}),
 
     ]), document.body);

@@ -9,13 +9,14 @@
   "devDependencies": {
     "cjsx-loader": "^3.0.0",
     "coffee-loader": "^0.7.2",
-    "coffee-react": "^4.0.0",
+    "coffee-react": "^5.0.0",
     "coffee-script": "^1.9.0",
-    "css-loader": "^0.21.0",
-    "faker": "^3.0.1",
-    "react": "^0.14.0",
-    "style-loader": "^0.13.0",
-    "webpack": "^1.5.3"
+    "css-loader": "^0.23.1",
+    "faker": "^3.1.0",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.0"
   },
   "homepage": "https://github.com/KyleAMathews/react-simple-table",
   "keywords": [
@@ -36,6 +37,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "deep-get-set": "^0.1.1"
+    "deep-get-set": "^1.0.0"
   }
 }
